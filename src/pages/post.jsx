@@ -7,7 +7,7 @@ import {
   ListItemAvatar,
   Box,
   TextField,
-  Button,
+  Divider,
   IconButton,
 } from "@mui/material";
 import { useEffect, useState, useRef } from "react";
@@ -37,6 +37,7 @@ const Post = () => {
       username: user.name,
       postId: post.id,
       body: commentRef.current.value,
+      custom: true,
     };
 
     setComments((prevComments) => [...prevComments, comment]);
@@ -71,7 +72,7 @@ const Post = () => {
         className="rounded-lg p-10 mt-10"
         sx={{ background: "#1E1E1E" }}
       >
-        <Box className="p-5">
+        <Box className="p-5 mb-2">
           <Box display="flex">
             <Avatar
               sx={{
@@ -91,18 +92,23 @@ const Post = () => {
           </Typography>
           <Typography variant="subtitle1"> {post.body}</Typography>
         </Box>
+        <Divider />
         <Box textAlign={"center"} p={5}>
           {comments.length > 0 ? (
             <List sx={{ maxHeight: "50vh", overflowX: "auto" }}>
               {comments.map((comment) => (
-                <ListItem key={comment.id}>
+                <ListItem
+                  key={comment.id}
+                  className="rounded-lg mb-2"
+                  sx={{ background: "#1A1A1A" }}
+                >
                   <ListItemAvatar>
                     <Avatar />
                   </ListItemAvatar>
                   <ListItemText
                     primary={
                       <Typography color={"cyan"}>
-                        {post.custom
+                        {comment.custom
                           ? comment.username
                           : comment.email.split("@")[0]}
                       </Typography>

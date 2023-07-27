@@ -7,7 +7,7 @@ const NotFound = () => {
         404 - Page Not Found
       </Typography>
       <Typography variant="subtitle1">
-        The page you are looking for does not exist.
+        The page you are looking for does not exist
       </Typography>
     </Box>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent, Typography, Box, Avatar } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { truncateTitle } from "../utilities/helperFunctions";
 import {
   deepOrange,
   deepPurple,
@@ -13,7 +14,6 @@ import {
   lime,
   green,
 } from "@mui/material/colors";
-import { truncateTitle } from "../utilities/helperFunctions";
 
 const colors = [
   deepOrange,
