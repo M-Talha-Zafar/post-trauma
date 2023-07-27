@@ -4,7 +4,7 @@ Post Trauma is a social media app designed to support individuals who have exper
 
 ## Live Demo
 
-- View live demo <a href="google.com"> here </a>
+- View live demo <a href="https://glowing-taiyaki-d9e3a9.netlify.app"> here </a>
 
 ## Features
 
