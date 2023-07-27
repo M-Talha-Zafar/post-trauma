@@ -5,6 +5,7 @@ import {
   Container,
   Grid,
   TextField,
+  Avatar,
   Typography,
 } from "@mui/material";
 import PostCard from "../components/postcard";
@@ -23,8 +24,8 @@ const Home = () => {
   const fetchPosts = () => {
     axios
       .get("https://jsonplaceholder.typicode.com/posts?_limit=10")
-      .then((response) => response.json())
-      .then((json) => setPosts(json));
+      .then((res) => setPosts(res.data))
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
@@ -98,6 +99,19 @@ const Home = () => {
                 custom={post.custom}
               />
             ))}
+          </Box>
+        </Grid>
+        <Grid item xs={12} sm={3}>
+          <Box
+            display={"flex"}
+            alignItems={"center"}
+            justifyContent={"flex-end"}
+          >
+            <Avatar sx={{ height: 64, width: 64 }} />
+            <Box pl={2}>
+              <Typography variant="h5">{user.name}</Typography>
+              <Typography variant="subtitle1">{user.email}</Typography>
+            </Box>
           </Box>
         </Grid>
       </Grid>
