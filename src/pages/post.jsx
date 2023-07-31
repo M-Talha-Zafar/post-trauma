@@ -52,6 +52,7 @@ const Post = () => {
     let comment = {
       id: randomId(),
       username: user.name,
+      userEmail: user.email,
       postId: post.id,
       body: commentRef.current.value,
       custom: true,
@@ -242,7 +243,7 @@ const Post = () => {
                           </Typography>
                         }
                       />
-                      {user.email === post.userEmail && (
+                      {user.email === comment.userEmail && (
                         <Box ml="auto" display="flex">
                           <Tooltip title="Delete" placement="top">
                             <DeleteIcon
